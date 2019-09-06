@@ -9,7 +9,7 @@ package au.edu.wa.nmtafe.hss;
  *
  * @author V244682
  */
-public class HashMain {
+public class HSSMain {
     
      /**
      * @param args the command line arguments
