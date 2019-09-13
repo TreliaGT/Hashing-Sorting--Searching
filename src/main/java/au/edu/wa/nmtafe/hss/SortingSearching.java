@@ -15,7 +15,6 @@ public class SortingSearching {
 
     /**
      * Bubble sort the array
-     *
      * @param array
      * @return
      */
