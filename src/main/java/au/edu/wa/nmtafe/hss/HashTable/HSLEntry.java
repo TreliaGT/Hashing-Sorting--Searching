@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package au.edu.wa.nmtafe.hss;
+package au.edu.wa.nmtafe.hss.HashTable;
 
 /**
  *
  * @author V244682
  */
-public class HashEntry {
+public class HSLEntry {
             String key;
 	    double value;    
 
-	    HashEntry(String key, double value) 
+	    HSLEntry(String key, double value) 
 	    {
 	        this.key = key;
 	        this.value = value;        
