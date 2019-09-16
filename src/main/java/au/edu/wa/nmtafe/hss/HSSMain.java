@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */package au.edu.wa.nmtafe.hss;
 
+import au.edu.wa.nmtafe.hss.HashTable.SLHashTable;
 import java.util.Scanner;
 
 /**
@@ -19,7 +20,7 @@ public class HSSMain {
         int[] numbers = {36, 29, 31, 125, 139, 131, 115, 105, 111, 40, 119, 47, 105, 57, 122, 109, 124, 115, 43, 120, 43, 27, 27, 32, 61, 37, 127, 29, 113, 121, 58, 114, 126, 53, 114, 96, 12, 127, 28, 42, 39, 113, 42, 18, 44, 18, 28, 48, 125, 107, 114, 34, 133, 45, 120, 30, 127, 31, 116, 146, 58, 109, 23, 105, 63, 27, 44, 105, 99, 41, 128, 121, 116, 125, 118, 44, 37, 113, 124, 37, 48, 127, 25, 109, 7, 31, 141, 46, 13, 27, 43, 117, 116, 27, 7, 68, 40, 31, 115, 124, 42, 128, 52, 71, 118, 117, 38, 27, 106, 33, 117, 116, 132, 104, 123, 35, 113, 122, 42, 117, 119, 32, 61, 37, 127, 29, 113, 121, 58, 114, 126, 53, 114, 96};
         Scanner scan = new Scanner(System.in);
         SortingSearching SS = new SortingSearching();
-        
+        SortingIntoHashTable(numbers);
         System.out.println(" do you wish to view UnSorted order? (Y/N)");
         char anwser = scan.next().charAt(0);
         if (anwser == 'Y' || anwser == 'y') {
@@ -51,5 +52,18 @@ public class HSSMain {
             System.out.println(num);
         }
     }
-
+    
+    public static void SortingIntoHashTable(int[] numbers){
+        String key;
+        int value;
+        SLHashTable hash = new SLHashTable(numbers.length);
+         for (int num : numbers) {
+            char[] i = String.valueOf(num).toCharArray();
+             if(i.length == 3){
+                 hash.insert(Integer.toString(i[0] + i[1]), i[2]);
+             }else if (i.length == 2){
+                 hash.insert(Integer.toString(i[0]), i[1]);
+             }  
+        }
+    }
 }
