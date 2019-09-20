@@ -15,6 +15,7 @@ public class SortingSearching {
 
     /**
      * Bubble sort the array
+     *
      * @param array
      * @return
      */
@@ -33,7 +34,25 @@ public class SortingSearching {
         return array;
     }
 
-    public void SearchingArray() {
+    public int binarySearchArray (int item, int[] list) {
 
+        int index = -1;
+        int low = 0;
+        int high = list.length - 1;
+        int mid;
+        while (high >= low) {
+            mid = (high + low) / 2;// calculate the midpoint of the current array
+            if (item < list[mid]) { 
+                high = mid - 1;
+            } else if (item > list[mid]) {
+            // value is in upper half, if at all
+                low = mid + 1;
+            } else {
+                // found it! break out of the loop
+                index = mid;
+                break;
+            }
+        }
+        return index;
     }
 }

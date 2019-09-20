@@ -18,32 +18,37 @@ public class HSSMain {
      */
     public static void main(String[] args) {
         int[] numbers = {36, 29, 31, 125, 139, 131, 115, 105, 111, 40, 119, 47, 105, 57, 122, 109, 124, 115, 43, 120, 43, 27, 27, 32, 61, 37, 127, 29, 113, 121, 58, 114, 126, 53, 114, 96, 12, 127, 28, 42, 39, 113, 42, 18, 44, 18, 28, 48, 125, 107, 114, 34, 133, 45, 120, 30, 127, 31, 116, 146, 58, 109, 23, 105, 63, 27, 44, 105, 99, 41, 128, 121, 116, 125, 118, 44, 37, 113, 124, 37, 48, 127, 25, 109, 7, 31, 141, 46, 13, 27, 43, 117, 116, 27, 7, 68, 40, 31, 115, 124, 42, 128, 52, 71, 118, 117, 38, 27, 106, 33, 117, 116, 132, 104, 123, 35, 113, 122, 42, 117, 119, 32, 61, 37, 127, 29, 113, 121, 58, 114, 126, 53, 114, 96};
+        int[] numbersSort = {36, 29, 31, 125, 139, 131, 115, 105, 111, 40, 119, 47, 105, 57, 122, 109, 124, 115, 43, 120, 43, 27, 27, 32, 61, 37, 127, 29, 113, 121, 58, 114, 126, 53, 114, 96, 12, 127, 28, 42, 39, 113, 42, 18, 44, 18, 28, 48, 125, 107, 114, 34, 133, 45, 120, 30, 127, 31, 116, 146, 58, 109, 23, 105, 63, 27, 44, 105, 99, 41, 128, 121, 116, 125, 118, 44, 37, 113, 124, 37, 48, 127, 25, 109, 7, 31, 141, 46, 13, 27, 43, 117, 116, 27, 7, 68, 40, 31, 115, 124, 42, 128, 52, 71, 118, 117, 38, 27, 106, 33, 117, 116, 132, 104, 123, 35, 113, 122, 42, 117, 119, 32, 61, 37, 127, 29, 113, 121, 58, 114, 126, 53, 114, 96};
         Scanner scan = new Scanner(System.in);
         SortingSearching SS = new SortingSearching();
-        SortingIntoHashTable(numbers);
-        System.out.println(" do you wish to view UnSorted order? (Y/N)");
-        char anwser = scan.next().charAt(0);
-        if (anwser == 'Y' || anwser == 'y') {
-            DisplayNumbers(numbers);
-        } else {
+             SS.SortingArray(numbersSort);
+        SortingIntoHashTable(numbersSort);
             while (true) {
-                numbers = SS.SortingArray(numbers);
-                System.out.println("Display Stem & Leaf (1), Search Value (2), Display Sorted array(3), Close Program (4)");
+                System.out.println("Display Stem & Leaf (1), Search Value (2), Display Sorted array(3),Display Unsorted Array(4) ,Close Program (5)");
                 int choice = scan.nextInt();
                 switch (choice) {
                     case 1://Stem & leaf 
                         break;
                     case 2://search value
+                         choice = scan.nextInt();
+                   int index = SS.binarySearchArray(choice, numbersSort);
+                       if(index < 0){
+                           System.out.println("Wasn't found");
+                       }else{
+                           System.out.println( choice + " was Found, Index: " + index);
+                       }
                         break;
                     case 3://sorted array
-                       DisplayNumbers(numbers);
+                       DisplayNumbers(numbersSort);
                         break;
                     case 4:
+                          DisplayNumbers(numbers);
+                        break;
+                    case 5:
                         System.exit(0);
                            break; 
                 }
             }
-        }
     }
 
     public static void DisplayNumbers(int[] numbers) {
@@ -54,16 +59,10 @@ public class HSSMain {
     }
     
     public static void SortingIntoHashTable(int[] numbers){
-        String key;
-        int value;
+     
         SLHashTable hash = new SLHashTable(numbers.length);
          for (int num : numbers) {
-            char[] i = String.valueOf(num).toCharArray();
-             if(i.length == 3){
-                 hash.insert(Integer.toString(i[0] + i[1]), i[2]);
-             }else if (i.length == 2){
-                 hash.insert(Integer.toString(i[0]), i[1]);
-             }  
-        }
+            
+         }   
     }
 }
