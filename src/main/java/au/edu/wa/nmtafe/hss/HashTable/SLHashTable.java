@@ -85,19 +85,19 @@ public class SLHashTable {
 	    }
 
 	    /* Function to remove a key */
-	    public void remove(String key) 
-	    {
-	        int hash1 = myhash1( key );
-	        int hash2 = myhash2( key );        
-
-	        while (table[hash1] != null && !table[hash1].key.equals(key))
-	        {
-	            hash1 += hash2;
-	            hash1 %= TABLE_SIZE;
-	        }
-	        table[hash1] = null;
-	        size--;
-	    }
+//	    public void remove(String key) 
+//	    {
+//	        int hash1 = myhash1( key );
+//	        int hash2 = myhash2( key );        
+//
+//	        while (table[hash1] != null && !table[hash1].key.equals(key))
+//	        {
+//	            hash1 += hash2;
+//	            hash1 %= TABLE_SIZE;
+//	        }
+//	        table[hash1] = null;
+//	        size--;
+//	    }
 
 	    /* Function myhash which gives a hash value for a given string */
 	    private int myhash1(String x )

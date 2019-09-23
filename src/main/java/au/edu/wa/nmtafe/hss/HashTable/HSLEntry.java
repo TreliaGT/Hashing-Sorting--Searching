@@ -11,9 +11,9 @@ package au.edu.wa.nmtafe.hss.HashTable;
  */
 public class HSLEntry {
             String key;
-	    double value;    
+	    int value;    
 
-	    HSLEntry(String key, double value) 
+	    HSLEntry(String key, int value) 
 	    {
 	        this.key = key;
 	        this.value = value;        
