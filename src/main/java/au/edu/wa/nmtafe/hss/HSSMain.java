@@ -72,6 +72,7 @@ public class HSSMain {
             }
             hash.insert(key, num);
         }
+        
       hash.printHashTable();
     
     }
