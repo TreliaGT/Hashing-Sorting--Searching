@@ -50,19 +50,19 @@ public class SLHashTable {
             
 
 	    /* Function to get value of a key */
-//	    public double get(String key) 
-//	    {
-//	        int hash1 = myhash1( key );
-//	        int hash2 = myhash2( key ); 
-//
-//	        while (table[hash1] != null && !table[hash1].key.equals(key))
-//	        {
-//	            hash1 += hash2;
-//	            hash1 %= TABLE_SIZE;
-//	        }
-//
-//	        return table[hash1].value;
-//	    }
+	    public int get(String key) 
+	    {
+	        int hash1 = myhash1( key );
+	        int hash2 = myhash2( key ); 
+
+	        while (table[hash1] != null && !table[hash1].key.equals(key))
+	        {
+	            hash1 += hash2;
+	            hash1 %= TABLE_SIZE;
+	        }
+
+	        return table[hash1].value;
+	    }
 
 	    /* Function to insert a key value pair */
 	    public void insert(String key, int value) 
@@ -124,9 +124,11 @@ public class SLHashTable {
 	    {
 	        System.out.println("\nHash Table");
 
-	        for (int i = 0; i < TABLE_SIZE; i++)
-	            if (table[i] != null)
+	        for (int i = 0; i < TABLE_SIZE; i++){
+	            if (table[i] != null){
 	                System.out.println(table[i].key +" "+table[i].value);
+                    }
+                }
 	    }
 	
 }
