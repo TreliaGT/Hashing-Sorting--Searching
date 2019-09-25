@@ -29,7 +29,7 @@ public class HSSMain {
             int choice = scan.nextInt();
             switch (choice) {
                 case 1://Stem & leaf 
-                    SortingIntoHashTable(test);
+                    SortingIntoHashTable(numbersSort);
                     break;
                 case 2://search value
                     System.out.println("Enter Number to Search");
@@ -71,6 +71,11 @@ public class HSSMain {
                 key = Integer.toString(0);
             } else if (num < 100) {
                 key = Integer.toString(num / 10);
+            }else if (num > 100){
+                key = Integer.toString(num / 100);
+            }
+            else{
+              key = "0";
             }
             hash.insert(key, num);
         }
