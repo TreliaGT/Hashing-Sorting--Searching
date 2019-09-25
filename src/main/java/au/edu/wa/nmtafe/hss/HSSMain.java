@@ -69,8 +69,10 @@ public class HSSMain {
         for (int num : numbers) {
             if (num < 10) {
                 key = Integer.toString(0);
-            } else if (num < 100 || num > 100) {
+            } else if (num < 100 ) {
                 key = Integer.toString(num / 10);
+            }else if (num < 1000){
+                 key = Integer.toString(num / 100);
             }
             else{
               key = "0";
