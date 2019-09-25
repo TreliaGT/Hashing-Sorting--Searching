@@ -102,7 +102,7 @@ public class SLHashTable {
 	    /* Function myhash which gives a hash value for a given string */
 	    private int myhash1(String x )
 	    {
-	        int hashVal = x.hashCode( );
+	        int hashVal = Integer.valueOf(x);
 	        hashVal %= TABLE_SIZE;
 	        if (hashVal < 0)
 	            hashVal += TABLE_SIZE;
@@ -112,7 +112,7 @@ public class SLHashTable {
 	    /* Function myhash function for double hashing */
 	    private int myhash2(String x )
 	    {
-	        int hashVal = x.hashCode( );
+	        int hashVal = Integer.valueOf(x);
 	        hashVal %= TABLE_SIZE;
 	        if (hashVal < 0)
 	            hashVal += TABLE_SIZE;
