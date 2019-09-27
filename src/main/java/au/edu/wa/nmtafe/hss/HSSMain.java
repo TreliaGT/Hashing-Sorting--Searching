@@ -24,7 +24,7 @@ public class HSSMain {
         SortingSearching SS = new SortingSearching();
         SS.SortingArray(numbersSort);
         while (true) {
-            System.out.println("Display Stem & Leaf (1), Search Value (2), Display Sorted array(3),Display Unsorted Array(4) ,Close Program (5)");
+            System.out.println(" Display Stem & Leaf (1) \n Search Value (2) \n Display Sorted array(3) \n Display Unsorted Array(4) \n Close Program (5)");
             int choice = scan.nextInt();
             switch (choice) {
                 case 1://Stem & leaf 
