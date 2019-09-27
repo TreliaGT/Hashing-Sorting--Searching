@@ -5,17 +5,27 @@
  */
 package au.edu.wa.nmtafe.hss.HashTable;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author V244682
  */
 public class HSLEntry {
-            String key;
-	    int value;    
+            int stem;
+	     ArrayList<Integer> leaves = new ArrayList();   
 
-	    HSLEntry(String key, int value) 
+	    HSLEntry(int stem,  int leaf) 
 	    {
-	        this.key = key;
-	        this.value = value;        
+	        this.stem = stem;
+	        addLeaf(leaf);        
 	    }
+            
+            /**
+             * Adds a leaf to the steam
+             * @param number 
+             */
+            public void addLeaf(int number){
+                leaves.add(number);
+            }
 }

@@ -23,7 +23,6 @@ public class HSSMain {
         Scanner scan = new Scanner(System.in);
         SortingSearching SS = new SortingSearching();
         SS.SortingArray(numbersSort);
-        SS.SortingArray(test);
         while (true) {
             System.out.println("Display Stem & Leaf (1), Search Value (2), Display Sorted array(3),Display Unsorted Array(4) ,Close Program (5)");
             int choice = scan.nextInt();
@@ -64,18 +63,9 @@ public class HSSMain {
     }
 
     public static void SortingIntoHashTable(int[] numbers) {
-        SLHashTable hash = new SLHashTable(numbers.length);
-        String key = "";
+        SLHashTable hash = new SLHashTable();
         for (int num : numbers) {
-            if (num < 10) {
-                key = Integer.toString(0);
-            } else if (num < 100 ) {
-                key = Integer.toString(num / 10);
-            }
-            else{
-              key = "0";
-            }
-            hash.insert(key, num);
+            hash.insert(num);
         }
       hash.printHashTable();
     }
